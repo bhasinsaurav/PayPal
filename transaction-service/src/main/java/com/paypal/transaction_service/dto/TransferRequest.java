@@ -1,0 +1,15 @@
+package com.paypal.transaction_service.dto;
+
+import lombok.Data;
+
+@Data
+public class TransferRequest {
+
+    private String SenderName;
+
+    private String ReceiverName;
+
+    private Double amount;
+
+
+}
