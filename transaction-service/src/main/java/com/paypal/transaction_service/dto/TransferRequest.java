@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 public class TransferRequest {
 
-    private String SenderName;
+    private Long senderId;
 
-    private String ReceiverName;
+    private Long receiverId;
 
     private Double amount;
 

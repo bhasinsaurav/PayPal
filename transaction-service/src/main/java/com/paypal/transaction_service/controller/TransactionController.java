@@ -1,5 +1,6 @@
 package com.paypal.transaction_service.controller;
 
+import com.paypal.transaction_service.dto.TransferRequest;
 import com.paypal.transaction_service.entity.Transaction;
 import com.paypal.transaction_service.service.TransactionService;
 import com.paypal.transaction_service.service.impl.TransactionServiceImpl;
@@ -19,9 +20,9 @@ public class TransactionController {
         this.transactionServiceImpl = transactionServiceImpl;
     }
 
-    @PostMapping
-    public ResponseEntity<?> createTransaction(@RequestBody Transaction transaction){
-        transactionServiceImpl.createTransaction(transaction);
+    @PostMapping("/create")
+    public ResponseEntity<?> createTransaction(@RequestBody TransferRequest request ){
+        Transaction transaction = transactionServiceImpl.createTransaction(request);
         return ResponseEntity.ok(transaction);
 
     }

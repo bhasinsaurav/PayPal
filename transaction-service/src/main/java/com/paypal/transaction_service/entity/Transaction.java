@@ -15,11 +15,11 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Sender_name", nullable = false)
-    private String senderName;
+    @Column(name = "Sender_Id", nullable = false)
+    private Long senderId;
 
-    @Column(name = "Receiver_Name", nullable = false)
-    private String receiverName;
+    @Column(name = "Receiver_Id", nullable = false)
+    private Long receiverId;
 
     @Column(nullable = false)
     @Positive(message = "Amount should be positive")
@@ -46,8 +46,8 @@ public class Transaction {
     public String toString(){
         return "Transaction {" +
                 "id=" + id +
-                ", senderName='" + senderName + '\'' +
-                ", receiverName='" + receiverName + '\'' +
+                ", senderName='" + senderId + '\'' +
+                ", receiverName='" + receiverId + '\'' +
                 ", amount=" + amount +
                 ", timestamp=" + timestamp +
                 ", status='" + status + '\'' +
